@@ -27,7 +27,10 @@ namespace CalculatorInterpreter
                 SyntaxAnalyzer syntaxAnalyzer = new SyntaxAnalyzer(commandInput);
 
                 if (!syntaxAnalyzer.Run())
+                {
                     LogError();
+                    continue;
+                }
 
                 // Create interpreter and run
                 Interpreter interpreter = new Interpreter(lexer.GetTokens());
