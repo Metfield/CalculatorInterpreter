@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 
 namespace CalculatorInterpreter
 {
@@ -22,7 +21,6 @@ namespace CalculatorInterpreter
             tokens = new Tokens();
         }
 
-        // Should be in the form of number + (operator number)
         public bool Parse()
         {
             // Trim whitespaces at the start or end of the command string
@@ -40,6 +38,7 @@ namespace CalculatorInterpreter
             if ((tokens.operandTokens.Count() - tokens.operatorTokens.Count()) != 1)
                 return false;
 
+            // Alles ist gut hier! (did I mention I'm a clown?)
             return true;
         }
 
@@ -97,6 +96,11 @@ namespace CalculatorInterpreter
 
             // Everything went well!
             return true;
+        }
+
+        public Tokens GetTokens()
+        {
+            return tokens;
         }
     }
 }
